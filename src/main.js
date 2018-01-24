@@ -3,13 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Methods from './Methods'
+import one from './components/one.vue'
+import HelloWorld from '@/components/HelloWorld'
 
 Vue.config.productionTip = false
-
+Vue.use(Methods)
+// console.log(HelloWorld)
 /* eslint-disable no-new */
-new Vue({
+const a = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
 })
+// console.log(a)
