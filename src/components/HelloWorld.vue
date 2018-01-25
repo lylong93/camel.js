@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="world">here</div>
+    <div class="world">
+    </div>
     <color ref='o' @input="ok"></color>
     <div>ok</div>
   </div>
@@ -15,10 +16,9 @@ export default {
       dd: null
     }
   },
-  created() {
-    console.log('c')
-  },
+  created() {},
   mounted() {
+    // this.$myName();
     console.log('m')
   },
   components: {
@@ -29,17 +29,21 @@ export default {
   methods: {
     ok(d) {
       this.$myName();
-      this.dd = d;
     }
   },
 }
 
 </script>
 <style lang="scss">
-.test1 {
-  height: 10px;
+.world {
+  height: 30px;
   width: 500px;
   background: yellow;
+}
+
+.te {
+  height: 100%;
+  width: 100%;
 }
 
 </style>

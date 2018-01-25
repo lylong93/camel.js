@@ -1,38 +1,41 @@
 function Plug() {
   Vue: 'null'
+  options: null
 }
 Plug.prototype.install = function(Vue, options) {
 
   Vue.prototype.$myName = this.co.bind(plug);
   this.Vue = Vue
-  // this.a = Vue
+  this.options = options
+
 }
 Plug.prototype.co = function(Vue, options) {
+  const a = this.Vue.component('anchored-heading', {
+    template: '<div>A custom component!<pl></pl>{{k}}</div>',
+    data() {
+      return {
+        k: 'o'
+      }
+    },
+    components: {
+      'pl': this.options
+    }
+  })
+
+  var MyComponent1 = this.Vue.extend({
+    template: '<div>Hello World</div>'
+  })
+
   const o = document.querySelector('.world')
-  const p = this.Vue.component('nt', {
-    template: '<div>A custom component!</div>'
-  })
-  // o.appendChild('nt')
-  new this.Vue({
-    el: '.world'
-  })
+
+  var component1 = new a().$mount()
+  // console.log(component1)
+  o.appendChild(component1.$el)
+  console.log(this.options)
+
+  // console.log(this.options.render().bind(this))
+  // console.log(res)
 }
 const plug = new Plug()
-// const plug = {
-//   ok: 'p',
-//   install(Vue, options) {
-//     Vue.prototype.$myName = this.co;
-//     console.log(this)
-//   },
-//   co() {
-//     console.log(ok)
-//     // const o = document.querySelector('.world')
-//     // this.vue.component('my-component', {
-//     //   template: '<div>A custom component!</div>'
-//     // })
-//     // var messageNode = document.createTextNode('message');
-//     // o.appendChild(messageNode)
-//   }
-// }
 
 export default plug

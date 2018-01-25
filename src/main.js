@@ -8,7 +8,7 @@ import one from './components/one.vue'
 import HelloWorld from '@/components/HelloWorld'
 
 Vue.config.productionTip = false
-Vue.use(Methods)
+Vue.use(Methods, one)
 // console.log(HelloWorld)
 /* eslint-disable no-new */
 const a = new Vue({
