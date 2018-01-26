@@ -2,8 +2,7 @@
   <div>
     <div class="world">
     </div>
-    <color ref='o' @input="ok"></color>
-    <div>ok</div>
+    <div @click="ok">ok</div>
   </div>
 </template>
 <script>
@@ -36,7 +35,7 @@ export default {
 </script>
 <style lang="scss">
 .world {
-  height: 30px;
+  height: 300px;
   width: 500px;
   background: yellow;
 }

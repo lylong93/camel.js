@@ -1,6 +1,6 @@
 <template>
   <div class="color-wrapper">
-    <!-- <div class="test" :style="{background: `hsla(${h}, ${s}%, ${l}%,${a/10})`}"></div> -->
+    <div class="test" :style="{background: `hsla(${h}, ${s}%, ${l}%,${a/10})`}"></div>
     <div class="color1">
       <div class="color">
         <input type="range" value="0" min="1" max="360" v-model="h" class="ii">
