@@ -1,6 +1,7 @@
 <template>
   <div class="color-wrapper">
     <div class="test" :style="{background: `hsla(${h}, ${s}%, ${l}%,${a/10})`}"></div>
+    <div>{{name}}</div>
     <div class="color1">
       <div class="color">
         <input type="range" value="0" min="1" max="360" v-model="h" class="ii">
@@ -33,6 +34,18 @@ export default {
       a: 10
     }
   },
+  props: {
+    name: {
+      type: Number,
+      default: 1
+    }
+  },
+
+  watch: {
+    name() {
+      console.log('o')
+    }
+  }
 }
 
 </script>
